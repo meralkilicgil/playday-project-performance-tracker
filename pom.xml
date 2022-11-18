@@ -8,13 +8,15 @@
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>serving-web-content</artifactId>
+	<groupId>com.playday.jiratracker</groupId>
+	<artifactId>playday-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>serving-web-content</name>
+	<name>playday-project</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
