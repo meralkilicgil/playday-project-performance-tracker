@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jira Performance Tracker</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    -<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            min-height: 100%;
+        }
+        body, div, form, input, select, textarea, p {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            line-height: 22px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #fff;
+            z-index: 2;
+            padding: 30px;
+        }
+        .testbox {
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+            padding: 20px;
+        }
+
+        .banner {
+            height: 80px;
+            background-color: #41c2c2;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .banner::after {
+            content: "";
+            background-color: #41c2c2;
+            width: 100%;
+            height: 100%;
+        }
+
+        .item:hover p {
+            color: #41c2c2;
+        }
+        .item input:hover, .item select:hover, .item textarea:hover {
+            border: 1px solid transparent;
+            box-shadow: 0 0 6px 0 #41c2c2;
+            color: #41c2c2;
+        }
+        .item {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        input[type=radio]:checked + label:after {
+            opacity: 1;
+        }
+        .btn-block {
+            margin-top: 10px;
+            text-align: center;
+        }
+        button {
+            width: 150px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #41c2c2;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #41c2c2;
+        }
+        .users {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="testbox">
+        <div class="banner">
+            <h1>Development Team Activity Report</h1>
+            <h3 th:text="${project}"></h3>
+            <h3 th:text="${release}"></h3>
+
+            <table class="users">
+                <div class="item">
+                <tr >
+                    <th><p>User name</p></th>
+                    <th><p> Total Activity</p></th>
+                </tr>
+                </div>
+                <div class="item">
+                <tr class="item" th:each="userprofile : ${userprofiles}">
+                    <td class="item" th:text="${userprofile.userName}"></td>
+                    <td class="item" th:text="${userprofile.totalActivity}"></td>
+                </tr>
+                </div>
+            </table>
+            <div class="btn-block">
+                <button type="button" onclick="window.history.go(-1);">Back</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
